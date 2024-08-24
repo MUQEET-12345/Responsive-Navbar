@@ -1,0 +1,121 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 92.5%;
+    overflow-x: hidden;
+}
+body{
+    /* overflow-x: hidden; */
+
+}
+
+.header {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.8rem;
+    background-color: #e7f5ff;
+}
+
+.logo {
+    height: 70px;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.navbar-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #212529;
+    transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: #364fc7;
+}
+
+.nav-icon {
+    height: 4rem;
+    width: 4rem;
+    color: #364fc7;
+}
+
+.nav-bar-btn {
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.nav-icon[name="close-outline"] {
+    display: none;
+}
+
+/* Responsive  */
+
+/* 980px */
+
+@media(max-width:62em) {
+    .nav-bar-btn {
+        display: block;
+        z-index: 999;
+        border: 2px solid black;
+        color: #212529;
+    }
+    .header{
+        position: relative;
+    }
+
+    .Navbar {
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background-color: #e7f5ff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        /* opacity: 0; */
+        /* visibility: hidden; */
+        pointer-events: none;
+    }
+    .navbar-list{
+        align-items: center;
+        flex-direction: column;
+    }
+    .active .Navbar{
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+        }
+    .active .nav-bar-btn .nav-icon[name="close-outline"]{
+        display: block;
+    }
+    .active .nav-bar-btn .nav-icon[name="menu-outline"]{
+        display: none;
+    }
+    }
+    @media(max-width:560px) {
+        .header{
+            padding: 0 4.2rem;
+        }
+        .header .logo{
+            width: 60%;
+        }
+    }
